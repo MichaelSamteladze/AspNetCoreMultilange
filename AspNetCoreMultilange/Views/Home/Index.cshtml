@@ -1,0 +1,30 @@
+﻿@model AspNetCoreMultilange.Models.HomeModel 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ASP.NET Core Multilanguage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row mb-5 mt-5">
+            <div class="col-xl-3">
+                <a href="@Html.Raw(Model.UrlEnglish)" class="btn btn-primary w-100">English</a>
+            </div>
+            <div class="col-xl-3">
+                <a href="@Html.Raw(Model.UrlGeorgian)" class="btn btn-success w-100">Georgian</a>
+            </div>
+            <div class="col-xl-3">
+                <a href="@Html.Raw(Model.UrlSpanish)" class="btn btn-secondary w-100">Spanish</a>
+            </div>
+            <div class="col-xl-3">
+                <a href="@Html.Raw(Model.UrlJapanese)" class="btn btn-danger w-100">Japanese</a>
+            </div>
+        </div>
+        <h1 class="text-center">@Model.TextHelloWorld</h1>
+        <p></p>
+    </div>
+</body>
+</html>
