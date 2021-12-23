@@ -12,12 +12,13 @@ namespace AspNetCoreMultilange.Controllers
         {
             var Model = new HomeModel();
 
-            Model.TextHelloWorld = Resources.TextHelloWorld;
             Model.UrlEnglish = Url.RouteUrl("Home");
             Model.UrlGeorgian = Url.RouteUrl("HomeCulture", new { Culture = "ka" });
             Model.UrlSpanish = Url.RouteUrl("HomeCulture", new { Culture = "es" });
             Model.UrlJapanese = Url.RouteUrl("HomeCulture", new { Culture = "ja" });
 
+            Model.TextHelloWorld = Resources.TextHelloWorld;
+            
             return View("~/Views/Home/Index.cshtml", Model);
         }       
     }

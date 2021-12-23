@@ -39,13 +39,18 @@ namespace SixtyThreeBits.Web
 
             App.UseFileServer();            
             App.UseRouting();
-            
+
+
+            var CultureEn = new CultureInfo("en");
+            var CultureEs = new CultureInfo("es");
+            var CultureJa = new CultureInfo("ja");
+            var CultureKa = new CultureInfo("ka") { NumberFormat = new NumberFormatInfo { CurrencyDecimalSeparator = "." } };
 
             var RequestLocalizationOptions = new RequestLocalizationOptions();
             RequestLocalizationOptions.RequestCultureProviders.Clear();
             RequestLocalizationOptions.RequestCultureProviders.Add(new CustomCultureProvider());
-            RequestLocalizationOptions.SupportedCultures = new List<CultureInfo> { new CultureInfo("en"), new CultureInfo("ka"), new CultureInfo("es"), new CultureInfo("ja") };
-            RequestLocalizationOptions.SupportedUICultures = new List<CultureInfo> { new CultureInfo("en"), new CultureInfo("ka"), new CultureInfo("es"), new CultureInfo("ja") };
+            RequestLocalizationOptions.SupportedCultures = new List<CultureInfo> { CultureEn, CultureEs, CultureJa, CultureKa };
+            RequestLocalizationOptions.SupportedUICultures = new List<CultureInfo> { CultureEn, CultureEs, CultureJa, CultureKa };
             App.UseRequestLocalization(RequestLocalizationOptions);
 
             App.UseEndpoints(Endpoints =>
